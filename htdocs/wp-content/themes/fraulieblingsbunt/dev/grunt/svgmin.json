@@ -1,0 +1,29 @@
+{
+    "options": {
+        "plugins": [
+            {
+                "removeViewBox": false
+            }, {
+                "removeUselessStrokeAndFill": false
+            }
+        ]
+    },
+    "image": {
+        "files": [{
+            "expand": true,
+            "src": ["../img/*.svg"]
+        }]
+    },
+    "sprite": {
+        "files": [{
+            "expand": true,
+            "src": ["sprite/*.svg"]
+        }]
+    },
+    "favicon": {
+        "files": [{
+            "expand": true,
+            "src": ["../favicon.svg"]
+        }]
+    }
+}

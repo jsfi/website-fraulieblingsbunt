@@ -1,0 +1,17 @@
+/**
+ * 6.1 Links
+ */
+
+a {
+	color: $link;;
+	text-decoration: none;
+}
+
+a:hover,
+a:focus {
+	text-decoration: underline;
+}
+
+a:visited {
+    color: $visited;
+}

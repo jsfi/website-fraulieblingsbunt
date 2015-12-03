@@ -1,0 +1,22 @@
+{
+    "build": {
+        "files": [{
+            "expand": true,
+            "cwd": "scss",
+            "src": ["**/*.scss"],
+            "dest": "../",
+            "ext": ".css"
+        }]
+    },
+    "dist": {
+        "options": {
+            "style": "compressed"
+        },
+        "files": [{
+            "cwd": "scss",
+            "src": ["**/*.scss"],
+            "dest": "../",
+            "ext": ".css"
+        }]
+    }
+}

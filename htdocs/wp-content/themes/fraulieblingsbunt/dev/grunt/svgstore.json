@@ -1,0 +1,10 @@
+{
+    "options": {
+        "prefix": "icon-"
+    },
+    "icons": {
+        "files": {
+            "../img/sprite.svg": ["sprite/*.svg"]
+        }
+    }
+}

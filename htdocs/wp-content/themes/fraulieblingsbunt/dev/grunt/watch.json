@@ -1,0 +1,13 @@
+{
+    "css": {
+        "files": ["../*.css"],
+        "options": { "livereload": true }
+    },
+    "scss": {
+        "files": ["scss/**/*.scss"],
+        "tasks": [
+            "sass:build",
+            "autoprefixer"
+        ]
+    }
+}
