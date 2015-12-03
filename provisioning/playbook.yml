@@ -1,0 +1,10 @@
+---
+- hosts: all
+  sudo: yes
+  vars:
+    domain: fraulieblingsbunt.vagrant
+
+  roles:
+    - server
+    - php
+    - mysql

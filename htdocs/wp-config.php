@@ -1,0 +1,1 @@
+wp-config/vagrant.php

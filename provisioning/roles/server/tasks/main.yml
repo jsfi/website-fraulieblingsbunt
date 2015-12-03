@@ -1,0 +1,31 @@
+---
+- name: Update apt cache
+  apt: update_cache=yes cache_valid_time=3600
+  sudo: yes
+
+- name: Install required software
+  apt: name={{ item }} state=latest
+  sudo: yes
+  with_items:
+    - apache2
+    - mysql-server
+    - php5-mysql
+    - php5
+    - libapache2-mod-php5
+    - php5-mcrypt
+    - python-mysqldb
+
+- name: enabled mod_rewrite
+  apache2_module: name=rewrite state=present
+  notify:
+    - restart apache2
+
+- name: create virtual host file
+  template: src=../files/virtualhost.conf dest=/etc/apache2/sites-available/{{ domain }}.conf
+
+- name: a2ensite {{ domain }}
+  command: a2ensite {{ domain }}
+  args:
+      creates: /etc/apache2/sites-enabled/{{ domain }}.conf
+  notify:
+      - restart apache2
