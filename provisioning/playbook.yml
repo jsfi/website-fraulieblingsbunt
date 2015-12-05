@@ -3,6 +3,7 @@
   sudo: yes
   vars:
     domain: fraulieblingsbunt.vagrant
+    projectdir: /var/www/vhosts/localhost
 
   roles:
     - server
