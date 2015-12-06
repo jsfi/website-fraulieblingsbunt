@@ -1,0 +1,56 @@
+.comments {
+    &__list {
+        max-width: 35em;
+
+        &,
+        & .children {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .children {
+            margin-left: 2em;
+        }
+    }
+}
+
+.comment {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.comment-meta {
+    margin-bottom: -1.5em;
+    text-align: justify;
+
+    &:after {
+        content: "";
+        display: inline-block;
+        width: 100%;
+    }
+}
+
+.comment-author,
+.comment-metadata,
+.comment-awaiting-moderation {
+    display: inline-block;
+}
+
+.reply {
+    margin-top: -1em;
+    font-size: .75em;
+}
+
+.comment-awaiting-moderation {
+    font-size: .75em;
+    color: $purple;
+}
+
+.comment-form {
+    max-width: 35em;
+
+    label {
+        display: block;
+        padding-left: .5em;
+    }
+}

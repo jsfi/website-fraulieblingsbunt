@@ -1,0 +1,19 @@
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    align-content: stretch;
+    justify-content: space-between;
+}
+
+.main {
+    flex-grow: 1;
+}
+
+.container {
+    max-width: 50em;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 2em;
+    padding-left: 2em;
+}

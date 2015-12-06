@@ -1,0 +1,21 @@
+.footer {
+    text-align: center;
+
+    &__copyright {
+        &:before,
+        &:after {
+            content: "";
+            display: inline-block;
+            width: 8em;
+            height: 0;
+            border-bottom: 1px solid $green;
+        }
+
+        &__text {
+            display: inline-block;
+            margin-right: 2em;
+            margin-left: 2em;
+            vertical-align: middle;
+        }
+    }
+}

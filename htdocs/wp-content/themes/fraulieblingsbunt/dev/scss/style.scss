@@ -15,7 +15,14 @@
 @import "normalize";
 @import "base";
 
+@import "layout";
+@import "header";
+@import "footer";
+@import "nav/main";
 
+@import "posts";
+@import "form";
+@import "comments";
 
 @import "helper";
 @import "print";

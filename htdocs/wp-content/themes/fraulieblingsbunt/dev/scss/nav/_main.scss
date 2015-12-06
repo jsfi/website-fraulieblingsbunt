@@ -1,0 +1,26 @@
+.nav-main {
+    display: inline-block;
+    margin-right: 1em;
+
+    .nav-menu {
+        margin-top: 0;
+        margin-bottom: 0;
+        padding-left: 0;
+    }
+
+    .menu-item {
+        display: inline-block;
+        margin-left: 1em;
+
+        & > a {
+            display: block;
+            padding: 46px 1em 29px;
+            text-decoration: none;
+            color: $text;
+
+            &:hover {
+                color: $green;
+            }
+        }
+    }
+}

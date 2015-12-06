@@ -1,0 +1,22 @@
+.header {
+    text-align: justify;
+
+    &:after {
+        content: "";
+        display: inline-block;
+        width: 100%;
+    }
+
+    &__title {
+        display: inline-block;
+        margin-top: 0;
+        margin-bottom: 0;
+        vertical-align: bottom;
+        font-size: 1em;
+
+        &__link {
+            display: block;
+            padding: 1.5em 2em;
+        }
+    }
+}

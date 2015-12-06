@@ -11,46 +11,45 @@
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?> class="no-js">
 <head>
-	<meta charset="<?php bloginfo( 'charset' ); ?>">
-	<meta name="viewport" content="width=device-width">
-	<link rel="profile" href="http://gmpg.org/xfn/11">
-	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-	<!--[if lt IE 9]>
-	<script src="<?php echo esc_url( get_template_directory_uri() ); ?>/js/html5.js"></script>
-	<![endif]-->
-	<?php wp_head(); ?>
+    <meta charset="<?php bloginfo( 'charset' ); ?>">
+    <meta name="viewport" content="width=device-width">
+    <link rel="profile" href="http://gmpg.org/xfn/11">
+    <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
+    <!--[if lt IE 9]>
+    <script src="<?php echo esc_url( get_template_directory_uri() ); ?>/js/html5.js"></script>
+    <![endif]-->
+    <?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
-<div id="page" class="hfeed site">
-	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'twentyfifteen' ); ?></a>
 
-	<div id="sidebar" class="sidebar">
-		<header id="masthead" class="site-header" role="banner">
-			<div class="site-branding">
-				<?php
-                if ( is_front_page() && is_home() ) : ?>
-                    <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-                        <img src="<?php echo get_stylesheet_directory_uri() ?>/img/frau-lieblingsbunt.svg" alt="Frau Lieblingsbunt" />
-                        <span class="says"><?php bloginfo( 'name' ); ?></span>
-                        </a></h1>
-                <?php else : ?>
-                    <p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-                        <img src="<?php echo get_template_directory_uri() ?>/img/frau-lieblingsbunt.svg" alt="Frau Lieblingsbunt" />
-                        <span class="says"><?php bloginfo( 'name' ); ?></span>
-                    </a></p>
-                <?php endif;
+<header class="header" role="banner">
+    <a class="visuallyhidden focusable" href="#<?php _e( 'Page', 'twentyfifteen' ); ?>"><?php _e( 'Skip to content', 'twentyfifteen' ); ?></a>
 
-					$description = get_bloginfo( 'description', 'display' );
-					if ( $description || is_customize_preview() ) : ?>
-						<p class="site-description"><?php echo $description; ?></p>
-					<?php endif;
-				?>
-				<button class="secondary-toggle"><?php _e( 'Menu and widgets', 'twentyfifteen' ); ?></button>
-			</div><!-- .site-branding -->
-		</header><!-- .site-header -->
+    <?php if ( is_front_page() && is_home() ) : ?>
+        <h1 class="header__title">
+    <?php else : ?>
+        <p class="header__title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="header__title__link" rel="home">
+    <?php endif; ?>
+        <img src="<?php echo get_stylesheet_directory_uri() ?>/img/frau-lieblingsbunt.svg" alt="Frau Lieblingsbunt" class="site-title__image" />
+        <span class="visuallyhidden"><?php bloginfo( 'name' ); ?></span>
+    <?php if ( is_front_page() && is_home() ) : ?>
+        </h1>
+    <?php else : ?>
+        </a></p>
+    <?php endif; ?>
 
-		<?php get_sidebar(); ?>
-	</div><!-- .sidebar -->
+    <?php if ( has_nav_menu( 'primary' ) ) : ?>
+        <nav class="nav-main" role="navigation">
+            <?php
+                // Primary navigation menu.
+                wp_nav_menu( array(
+                    'menu_class'     => 'nav-menu',
+                    'theme_location' => 'primary',
+                ));
+            ?>
+        </nav>
+    <?php endif; ?>
+</header>
 
-	<div id="content" class="site-content">
+<main id="<?php _e( 'Page', 'twentyfifteen' ); ?>" class="main">
