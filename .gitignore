@@ -2,7 +2,7 @@ composer.lock
 log/access.log
 log/error.log
 htdocs/wp-config/vagrant.php
-htdocs/wp-content/themes/twentyfifteen
+htdocs/wp-content/themes/twentysixteen
 htdocs/wp-content/plugins
 htdocs/wp-content/uploads
 htdocs/wp
