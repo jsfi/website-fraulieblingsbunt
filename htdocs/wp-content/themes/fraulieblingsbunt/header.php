@@ -5,26 +5,26 @@
  * Displays all of the head element and everything up until the "site-content" div.
  *
  * @package WordPress
- * @subpackage Twenty_Fifteen
- * @since Twenty Fifteen 1.0
+ * @subpackage Twenty_Sixteen
+ * @since Twenty Sixteen 1.0
  */
+
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?> class="no-js">
 <head>
     <meta charset="<?php bloginfo( 'charset' ); ?>">
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="profile" href="http://gmpg.org/xfn/11">
-    <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-    <!--[if lt IE 9]>
-    <script src="<?php echo esc_url( get_template_directory_uri() ); ?>/js/html5.js"></script>
-    <![endif]-->
+    <?php if ( is_singular() && pings_open( get_queried_object() ) ) : ?>
+	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
+	<?php endif; ?>
     <?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
 
 <header class="header" role="banner">
-    <a class="visuallyhidden focusable" href="#<?php _e( 'Page', 'twentyfifteen' ); ?>"><?php _e( 'Skip to content', 'twentyfifteen' ); ?></a>
+    <a class="visuallyhidden focusable" href="#<?php _e( 'Page', 'twentysixteen' ); ?>"><?php _e( 'Skip to content', 'twentysixteen' ); ?></a>
 
     <?php if ( is_front_page() && is_home() ) : ?>
         <h1 class="header__title">
@@ -52,4 +52,4 @@
     <?php endif; ?>
 </header>
 
-<main id="<?php _e( 'Page', 'twentyfifteen' ); ?>" class="main">
+<main id="<?php _e( 'Page', 'twentysixteen' ); ?>" class="main">
