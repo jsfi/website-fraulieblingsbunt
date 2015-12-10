@@ -1,6 +1,9 @@
 <?php
 
 add_filter( 'show_admin_bar', '__return_false' );
+add_filter( 'get_the_archive_title', function( $title ) {
+    return str_replace( sprintf( __( 'Category: %s' ), ''), '', $title);
+});
 
 add_action( 'wp_enqueue_scripts', function() {
     wp_dequeue_script( 'twentysixteen-skip-link-focus-fix' );
@@ -11,6 +14,7 @@ add_action( 'wp_enqueue_scripts', function() {
 add_action( 'after_setup_theme', function() {
     add_theme_support( 'post-thumbnails' );
     set_post_thumbnail_size( 0, 1024, false );
+    remove_filter( 'excerpt_more', 'twentysixteen_excerpt_more' );
 }, 100);
 
 function flb_get_post_image( $post_id, $image_class, $default_size = 'large' ) {

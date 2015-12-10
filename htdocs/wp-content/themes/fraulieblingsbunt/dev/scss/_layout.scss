@@ -6,7 +6,8 @@ body {
     justify-content: space-between;
 }
 
-.main {
+.main,
+.wrap {
     flex-grow: 1;
 }
 
@@ -16,4 +17,38 @@ body {
     margin-left: auto;
     padding-right: 2em;
     padding-left: 2em;
+}
+
+.wrap_side-left {
+    display: flex;
+    justify-content: center;
+
+    .main {
+        max-width: 960px;
+        padding-right: 2em;
+    }
+
+    .side {
+        width: 320px;
+        order: -1;
+    }
+
+    .page__title {
+        text-align: left;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .wrap_side-left {
+        display: block;
+
+        .main {
+            padding-left: 2em;
+        }
+
+        .side {
+            margin-right: auto;
+            margin-left: auto;
+        }
+    }
 }

@@ -10,11 +10,6 @@
  */
 ?>
 
-</main>
-<aside class="side">
-    <?php get_sidebar(); ?>
-</aside>
-
 <footer class="footer" role="contentinfo">
     <p class="footer__copyright">
         <span class="footer__copyright__text">&copy;Frau Lieblingsbunt 2016.<br>Please do not use my words or photos without my permission.</span>

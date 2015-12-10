@@ -4,7 +4,7 @@
     },
     "icons": {
         "files": {
-            "../img/sprite.svg": ["sprite/*.svg"]
+            "../img/icons.svg": ["icons/*.svg"]
         }
     }
 }

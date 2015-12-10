@@ -9,6 +9,7 @@
 
 get_header(); ?>
 
+<main id="<?php _e( 'Page', 'twentysixteen' ); ?>" class="main">
 <?php while ( have_posts() ) : the_post();
 
     get_template_part( 'template-parts/content', 'single' );
@@ -20,5 +21,6 @@ get_header(); ?>
     endif;
 
 endwhile; ?>
+</main>
 
 <?php get_footer(); ?>

@@ -12,11 +12,15 @@
         margin-top: 0;
         margin-bottom: 0;
         vertical-align: bottom;
-        font-size: 1em;
 
         &__link {
             display: block;
             padding: 1.5em 2em;
         }
     }
+}
+
+h1.header__title {
+    padding: 1.5em 2em;
+    font-size: 1em;
 }

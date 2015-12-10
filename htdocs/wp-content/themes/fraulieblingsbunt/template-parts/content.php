@@ -14,6 +14,19 @@
             <?php the_title( '<h2 class="post__title">', '</h2>' ); ?>
         </header>
 
-        <?php echo flb_get_post_image(null, 'post__thumbnail'); ?>
+        <?php if( is_front_page() ): ?>
+            <?php echo flb_get_post_image( null, 'post__thumbnail' ); ?>
+        <?php else: ?>
+            <div class="post__preview">
+                <div class="post__thumbnail__container">
+                    <div class="post__thumbnail__hover">
+                        <?php echo flb_get_post_image( null, 'post__thumbnail', 'medium' ); ?>
+                    </div>
+                </div>
+                <div class="post__content">
+                    <?php the_excerpt(); ?>
+                </div>
+            </div>
+        <?php endif; ?>
     </a>
 </article>

@@ -14,10 +14,10 @@
             "src": ["../img/*.svg"]
         }]
     },
-    "sprite": {
+    "icons": {
         "files": [{
             "expand": true,
-            "src": ["sprite/*.svg"]
+            "src": ["icons/*.svg"]
         }]
     },
     "favicon": {

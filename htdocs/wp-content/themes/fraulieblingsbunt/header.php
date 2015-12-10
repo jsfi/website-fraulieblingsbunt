@@ -22,7 +22,7 @@
 </head>
 
 <body <?php body_class(); ?>>
-
+<div class="visuallyhidden"><?php readfile( get_stylesheet_directory() . '/img/icons.svg' ) ?></div>
 <header class="header" role="banner">
     <a class="visuallyhidden focusable" href="#<?php _e( 'Page', 'twentysixteen' ); ?>"><?php _e( 'Skip to content', 'twentysixteen' ); ?></a>
 
@@ -41,6 +41,9 @@
 
     <?php if ( has_nav_menu( 'primary' ) ) : ?>
         <nav class="nav-main" role="navigation">
+            <button type="button" class="nav-main-toggle">
+                <span class="visuallyhidden"><?php _e( 'Menu', 'twentysixteen') ?></span>
+            </button>
             <?php
                 // Primary navigation menu.
                 wp_nav_menu( array(
@@ -51,5 +54,3 @@
         </nav>
     <?php endif; ?>
 </header>
-
-<main id="<?php _e( 'Page', 'twentysixteen' ); ?>" class="main">
