@@ -37,18 +37,3 @@ body {
         text-align: left;
     }
 }
-
-@media screen and (max-width: 767px) {
-    .wrap_side-left {
-        display: block;
-
-        .main {
-            padding-left: 2em;
-        }
-
-        .side {
-            margin-right: auto;
-            margin-left: auto;
-        }
-    }
-}

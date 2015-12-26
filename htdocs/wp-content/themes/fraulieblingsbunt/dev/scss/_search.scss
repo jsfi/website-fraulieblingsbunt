@@ -1,3 +1,20 @@
-.search__field {
-    max-width: 28em;
+.search {
+    &__form {
+        display: flex;
+        align-items: stretch;
+    }
+
+    &__label {
+        flex-grow: 1;
+    }
+
+    &__field {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+
+    &__submit {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+    }
 }

@@ -41,8 +41,12 @@
 
     <?php if ( has_nav_menu( 'primary' ) ) : ?>
         <nav class="nav-main" role="navigation">
-            <button type="button" class="nav-main-toggle">
+            <button type="button" class="nav-main__toggle">
                 <span class="visuallyhidden"><?php _e( 'Menu', 'twentysixteen') ?></span>
+                <span class="nav-main__row nav-main__row1"></span>
+                <span class="nav-main__row nav-main__row2"></span>
+                <span class="nav-main__row nav-main__row3"></span>
+                <span class="nav-main__row nav-main__row4"></span>
             </button>
             <?php
                 // Primary navigation menu.

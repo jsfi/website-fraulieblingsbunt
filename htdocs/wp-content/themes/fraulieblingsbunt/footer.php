@@ -12,7 +12,7 @@
 
 <footer class="footer" role="contentinfo">
     <p class="footer__copyright">
-        <span class="footer__copyright__text">&copy;Frau Lieblingsbunt 2016.<br>Please do not use my words or photos without my permission.</span>
+        <span class="footer__copyright__text">&copy;Frau Lieblingsbunt 2016.<br>Bitte verwende meine Bilder oder Texte nicht ohne meine Erlaubnis.</span>
     </p>
 </footer>
 

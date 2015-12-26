@@ -250,8 +250,8 @@ select {
  */
 button,
 html input[type="button"],
-input[type="reset"],
-input[type="submit"] {
+[type="reset"],
+[type="submit"] {
   -webkit-appearance: button;
   /* 2 */
   cursor: pointer;
@@ -286,8 +286,8 @@ input {
  * 1. Address box sizing set to `content-box` in IE 8/9/10.
  * 2. Remove excess padding in IE 8/9/10.
  */
-input[type="checkbox"],
-input[type="radio"] {
+[type="checkbox"],
+[type="radio"] {
   box-sizing: border-box;
   /* 1 */
   padding: 0;
@@ -298,15 +298,15 @@ input[type="radio"] {
  * `font-size` values of the `input`, it causes the cursor style of the
  * decrement button to change from `default` to `text`.
  */
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button {
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
   height: auto; }
 
 /**
  * 1. Address `appearance` set to `searchfield` in Safari and Chrome.
  * 2. Address `box-sizing` set to `border-box` in Safari and Chrome.
  */
-input[type="search"] {
+[type="search"] {
   -webkit-appearance: textfield;
   /* 1 */
   box-sizing: content-box;
@@ -317,8 +317,8 @@ input[type="search"] {
  * Safari (but not Chrome) clips the cancel button when the search input has
  * padding (and `textfield` appearance).
  */
-input[type="search"]::-webkit-search-cancel-button,
-input[type="search"]::-webkit-search-decoration {
+[type="search"]::-webkit-search-cancel-button,
+[type="search"]::-webkit-search-decoration {
   -webkit-appearance: none; }
 
 /**
@@ -487,14 +487,6 @@ body {
   .wrap_side-left .page__title {
     text-align: left; }
 
-@media screen and (max-width: 767px) {
-  .wrap_side-left {
-    display: block; }
-    .wrap_side-left .main {
-      padding-left: 2em; }
-    .wrap_side-left .side {
-      margin-right: auto;
-      margin-left: auto; } }
 .header {
   text-align: justify; }
   .header:after {
@@ -545,6 +537,45 @@ h1.header__title {
       color: #171717; }
       .nav-main .menu-item > a:hover {
         color: #008B8B; }
+  .nav-main__toggle {
+    display: none;
+    width: 60px;
+    height: 45px;
+    position: relative;
+    -webkit-transition: .5s ease-in-out;
+            transition: .5s ease-in-out;
+    cursor: pointer;
+    background: none;
+    border: 0; }
+    .nav-main__toggle:focus {
+      outline: none; }
+  .nav-main__row {
+    width: 100%;
+    height: 9px;
+    position: absolute;
+    left: 0;
+    background-color: #008B8B;
+    border-radius: 9px;
+    -webkit-transition: .25s ease-in-out;
+            transition: .25s ease-in-out; }
+    .nav-main__row1 {
+      top: 0; }
+    .nav-main__row2, .nav-main__row3 {
+      top: 18px; }
+    .nav-main__row4 {
+      top: 36px; }
+  .nav-main__toggle_open .nav-main__row1, .nav-main__toggle_open .nav-main__row4 {
+    width: 0;
+    left: 50%;
+    top: 18px; }
+  .nav-main__toggle_open .nav-main__row2 {
+    -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+            transform: rotate(45deg); }
+  .nav-main__toggle_open .nav-main__row3 {
+    -webkit-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+            transform: rotate(-45deg); }
 
 .page__title {
   font-weight: normal;
@@ -582,22 +613,31 @@ h1.header__title {
     .post__link:hover .post__thumbnail__hover:after {
       content: ""; }
 .post__navigation {
-  direction: rtl;
-  text-align: justify; }
-  .post__navigation:after {
-    content: "";
-    display: inline-block;
-    width: 100%; }
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between; }
   .post__navigation__link {
-    display: inline-block;
-    width: 45%;
+    width: 50%;
     text-decoration: none; }
   .post__navigation__next {
-    direction: ltr;
-    text-align: right; }
+    text-align: right;
+    -webkit-box-ordinal-group: 3;
+    -webkit-order: 2;
+        -ms-flex-order: 2;
+            order: 2; }
     .post__navigation__next .post__navigation__text {
       margin-right: 1em; }
   .post__navigation__prev {
+    direction: rtl;
     text-align: left; }
     .post__navigation__prev .post__navigation__text {
       direction: ltr;
@@ -699,7 +739,8 @@ textarea {
   width: 100%;
   padding: .25em .5em;
   box-sizing: border-box;
-  background-color: #fafafa; }
+  background-color: #fafafa;
+  box-sizing: border-box; }
 
 .btn,
 .submit {
@@ -751,9 +792,89 @@ textarea {
     display: block;
     padding-left: .5em; }
 
+.search__form {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: stretch;
+  -webkit-align-items: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch; }
+.search__label {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1; }
 .search__field {
-  max-width: 28em; }
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0; }
+.search__submit {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0; }
 
+@media screen and (max-width: 767px) {
+  .wrap_side-left {
+    display: block; }
+    .wrap_side-left .main {
+      padding-left: 2em; }
+    .wrap_side-left .side {
+      margin-right: auto;
+      margin-left: auto; }
+
+  .header__title,
+  .nav-main {
+    vertical-align: middle; }
+
+  .nav-main__toggle {
+    display: block; }
+
+  .menu-main-container {
+    display: none;
+    position: absolute;
+    top: 5em;
+    right: 0;
+    left: 0; }
+    .nav-main__toggle_open + .menu-main-container {
+      display: block; }
+
+  .nav-main .menu-item {
+    display: block;
+    margin-left: 0; }
+    .nav-main .menu-item > a {
+      padding: .5em 2em;
+      background-color: #fafafa;
+      border-bottom: 1px solid #171717; }
+
+  .post-listing .post__header {
+    opacity: 1; }
+
+  .post__preview {
+    display: block; }
+    .post__preview .post__thumbnail__container {
+      margin-left: 0; }
+
+  .post__navigation {
+    display: block; } }
+@media screen and (max-width: 399px) {
+  .header__title__link,
+  h1.header__title {
+    padding-right: .5em;
+    padding-left: .5em; }
+
+  .nav-main {
+    margin-right: .5em; }
+
+  .post__preview .post__thumbnail__container {
+    width: auto; }
+
+  .post__navigation__text {
+    display: block;
+    text-align: center; }
+    .post__navigation__next .post__navigation__text {
+      margin-right: 0; }
+    .post__navigation__prev .post__navigation__text {
+      margin-left: 0; } }
 /* ==========================================================================
    Helper classes
    ========================================================================== */

@@ -48,24 +48,18 @@
     }
 
     &__navigation {
-        direction: rtl;
-        text-align: justify;
-
-        &:after {
-            content: "";
-            display: inline-block;
-            width: 100%;
-        }
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
 
         &__link {
-            display: inline-block;
-            width: 45%;
+            width: 50%;
             text-decoration: none;
         }
 
         &__next {
-            direction: ltr;
             text-align: right;
+            order: 2;
 
             .post__navigation__text {
                 margin-right: 1em;
@@ -73,6 +67,7 @@
         }
 
         &__prev {
+            direction: rtl;
             text-align: left;
 
             .post__navigation__text {
