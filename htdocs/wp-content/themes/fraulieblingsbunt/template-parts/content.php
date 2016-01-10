@@ -19,9 +19,7 @@
         <?php else: ?>
             <div class="post__preview">
                 <div class="post__thumbnail__container">
-                    <div class="post__thumbnail__hover">
-                        <?php echo flb_get_post_image( null, 'post__thumbnail', 'medium' ); ?>
-                    </div>
+                    <?php echo flb_get_post_image( null, 'post__thumbnail', 'medium' ); ?>
                 </div>
                 <div class="post__content">
                     <?php the_excerpt(); ?>

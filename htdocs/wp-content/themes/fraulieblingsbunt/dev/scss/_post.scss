@@ -4,22 +4,25 @@
         font-size: 1.5em;
         text-align: center;
 
-        .wrap & {
+        .post__list & {
             margin-top: 2rem;
             margin-bottom: 0;
             text-align: left;
+            color: $green;
         }
     }
 
     &__link {
         display: block;
 
-        .wrap & {
+        .post__list & {
             text-decoration: none;
             color: inherit;
+        }
 
-            &:hover {
-                color: $green;
+        &:hover {
+            .post__title {
+                color: $black;
             }
         }
     }
@@ -27,30 +30,14 @@
     &__thumbnail {
         display: block;
         max-width: 100%;
-
-        &__hover {
-            position: relative;
-
-            &:after {
-                position: absolute;
-                top: 0;
-                right: 0;
-                bottom: 0;
-                left: 0;
-                background-color: $green;
-                opacity: .5;
-            }
-
-            .post__link:hover &:after {
-                content: "";
-            }
-        }
     }
 
     &__navigation {
         display: flex;
+        margin: 8em 0;
         align-items: center;
         justify-content: space-between;
+        flex-direction: row-reverse;
 
         &__link {
             width: 50%;
@@ -59,7 +46,6 @@
 
         &__next {
             text-align: right;
-            order: 2;
 
             .post__navigation__text {
                 margin-right: 1em;
@@ -104,9 +90,10 @@
 
     .post {
         display: inline-block;
-        position: relative;
         height: 80vh;
+        height: calc(100vh - 202px);
         max-height: 1024px;
+        position: relative;
         overflow: hidden;
         white-space: normal;
 

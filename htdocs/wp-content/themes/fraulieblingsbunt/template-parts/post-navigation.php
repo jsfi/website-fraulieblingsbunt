@@ -11,7 +11,7 @@
         </a>
     <?php else: ?>
         <span class="post__navigation__empty">
-            <span class="visuallyhidden"><?php _e( 'No next post', 'twentysixteen' ) ?></span>
+            <span class="visuallyhidden"><?php _e( 'No previous post', 'twentysixteen' ) ?></span>
         </span>
     <?php endif; ?>
     <?php $prev = get_previous_post(); if( $prev ): ?>
@@ -24,9 +24,5 @@
                 <?php echo flb_get_post_image( $prev->ID, 'post__navigation__image', 'thumbnail' ) ?>
             </p>
         </a>
-    <?php else: ?>
-        <span class="post__navigation__empty">
-            <span class="visuallyhidden"><?php _e( 'No previous post', 'twentysixteen' ) ?></span>
-        </span>
     <?php endif; ?>
 </nav>
