@@ -380,6 +380,10 @@ a {
   a:visited {
     color: #8B0E0E; }
 
+img {
+  max-width: 100%;
+  height: auto; }
+
 /*
  * Remove text-shadow in selection highlight:
  * https://twitter.com/miketaylr/status/12228805301
@@ -601,9 +605,8 @@ h1.header__title {
     text-decoration: none;
     color: inherit; }
 .post__thumbnail {
-  display: block;
-  max-width: 100%; }
-  .single-post .post__thumbnail {
+  display: block; }
+  .page .post__thumbnail, .single-post .post__thumbnail {
     width: 100%; }
 .post__navigation {
   display: -webkit-box;

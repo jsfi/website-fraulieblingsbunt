@@ -27,8 +27,8 @@
 
     &__thumbnail {
         display: block;
-        max-width: 100%;
 
+        .page &,
         .single-post & {
             width: 100%;;
         }
