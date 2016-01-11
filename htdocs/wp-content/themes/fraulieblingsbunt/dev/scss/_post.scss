@@ -10,6 +10,10 @@
             text-align: left;
             color: $green;
         }
+
+        .post__list .post__link:hover & {
+            color: $black;
+        }
     }
 
     &__link {
@@ -19,22 +23,20 @@
             text-decoration: none;
             color: inherit;
         }
-
-        &:hover {
-            .post__title {
-                color: $black;
-            }
-        }
     }
 
     &__thumbnail {
         display: block;
         max-width: 100%;
+
+        .single-post & {
+            width: 100%;;
+        }
     }
 
     &__navigation {
         display: flex;
-        margin: 8em 0;
+        margin: 5em 0;
         align-items: center;
         justify-content: space-between;
         flex-direction: row-reverse;
@@ -88,13 +90,32 @@
     overflow: auto;
     white-space: nowrap;
 
+    &__container,
+    .post {
+        height: 80vh;
+        height: calc(100vh - 185px);
+        max-height: 1024px;
+        overflow: hidden;
+    }
+
+    &__container {
+        position: relative;
+
+        &:after {
+            content: ">";
+            margin-top: -.625em;
+            position: absolute;
+            right: .25em;
+            top: 50%;
+            font-size: 5em;
+            opacity: .75;
+            cursor: pointer;
+        }
+    }
+
     .post {
         display: inline-block;
-        height: 80vh;
-        height: calc(100vh - 202px);
-        max-height: 1024px;
         position: relative;
-        overflow: hidden;
         white-space: normal;
 
         &__link {

@@ -9,12 +9,13 @@ add_action( 'wp_enqueue_scripts', function() {
     wp_dequeue_script( 'twentysixteen-skip-link-focus-fix' );
     wp_dequeue_script( 'twentysixteen-keyboard-image-navigation' );
     wp_dequeue_script( 'twentysixteen-script' );
-    wp_enqueue_script( 'flb-script', get_stylesheet_directory_uri() . '/js/main.js', [], '1.0.0', true );
+    wp_enqueue_script( 'flb-script', get_stylesheet_directory_uri() . '/js/main.js', array(), '1.0.0', true );
 }, 100 );
 
 add_action( 'after_setup_theme', function() {
     add_theme_support( 'post-thumbnails' );
     set_post_thumbnail_size( 0, 1024, false );
+    add_image_size( 'hd', 1920, 0 );
     remove_filter( 'excerpt_more', 'twentysixteen_excerpt_more' );
 }, 100);
 

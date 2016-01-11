@@ -44,7 +44,7 @@ get_header(); ?>
                 </header>
             <?php endif; ?>
 
-            <div class="post-listing">
+            <div class="post-listing__container"><div class="post-listing">
                 <?php while ( have_posts() ) : the_post();
 
                     /*
@@ -55,7 +55,7 @@ get_header(); ?>
                     get_template_part( 'template-parts/content', get_post_format() );
 
                 endwhile; ?>
-            </div>
+            </div></div>
 
             <?php // Previous/next page navigation.
             the_posts_pagination( array(
