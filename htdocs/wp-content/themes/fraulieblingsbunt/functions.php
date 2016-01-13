@@ -19,6 +19,17 @@ add_action( 'after_setup_theme', function() {
     remove_filter( 'excerpt_more', 'twentysixteen_excerpt_more' );
 }, 100);
 
+function featuredtoRSS($content) {
+    global $post;
+
+    if ( has_post_thumbnail( $post->ID ) ){
+        $content = '<p>' . flb_get_post_image( $post->ID ) . '</p>' . $content;
+    }
+
+    return $content;
+}
+add_filter('the_excerpt_rss', 'featuredtoRSS');
+add_filter('the_content_feed', 'featuredtoRSS');
 
 function flb_get_post_image( $post_id = null, $image_class = false, $default_size = null ) {
     $thumbnail_id = get_post_thumbnail_id( $post_id );
@@ -26,7 +37,7 @@ function flb_get_post_image( $post_id = null, $image_class = false, $default_siz
     if( !$thumbnail_id ) return '';
 
     $imageSize = wp_get_attachment_image_src( $thumbnail_id, $default_size );
-    $image =  '<image src="'
+    $image =  '<img src="'
     . $imageSize[0] . '" srcset="'. $imageSize[0] . ' ' . $imageSize[1] . 'w';
 
     foreach( get_intermediate_image_sizes() as $i => $size ) {
