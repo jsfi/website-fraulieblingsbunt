@@ -19,6 +19,8 @@ add_action( 'after_setup_theme', function() {
     remove_filter( 'excerpt_more', 'twentysixteen_excerpt_more' );
 }, 100);
 
+load_child_theme_textdomain( 'twentysixteen', get_stylesheet_directory() . '/languages/' );
+
 function featuredtoRSS($content) {
     global $post;
 

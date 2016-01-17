@@ -1,0 +1,3 @@
+[submodule "htdocs/wp-content/themes/twentysixteen"]
+	path = htdocs/wp-content/themes/twentysixteen
+	url = https://github.com/WordPress/twentysixteen
