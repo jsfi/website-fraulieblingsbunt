@@ -27,6 +27,7 @@
         top: 5em;
         right: 0;
         left: 0;
+        z-index: 1;
 
         .nav-main__toggle_open + & {
             display: block;
