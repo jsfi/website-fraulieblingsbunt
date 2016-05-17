@@ -845,7 +845,8 @@ textarea {
   background-position: -120px 0; }
 
 #sb_instagram {
-  margin: 1.5em 0; }
+  margin: 1.5em 0;
+  padding-top: 102px; }
 
 @media screen and (max-width: 767px) {
   .wrap_side-left {
@@ -890,7 +891,10 @@ textarea {
       margin-left: 0; }
 
   .post__navigation {
-    display: block; } }
+    display: block; }
+
+  #sb_instagram {
+    padding-top: 0; } }
 @media screen and (max-width: 399px) {
   .header__title__link,
   h1.header__title {
