@@ -9,7 +9,7 @@ add_action( 'wp_enqueue_scripts', function() {
     wp_dequeue_script( 'twentysixteen-skip-link-focus-fix' );
     wp_dequeue_script( 'twentysixteen-keyboard-image-navigation' );
     wp_dequeue_script( 'twentysixteen-script' );
-    wp_enqueue_script( 'flb-script', get_stylesheet_directory_uri() . '/js/main.js', array(), '1.0.0', true );
+    wp_enqueue_script( 'flb-script', get_stylesheet_directory_uri() . '/js/main.js', [], '1.0.0', true );
 }, 100 );
 
 add_action( 'after_setup_theme', function() {
@@ -43,8 +43,6 @@ function flb_get_post_image( $post_id = null, $image_class = false, $default_siz
     . $imageSize[0] . '" srcset="'. $imageSize[0] . ' ' . $imageSize[1] . 'w';
 
     foreach( get_intermediate_image_sizes() as $i => $size ) {
-        $width = 0;
-
         $image .= ', ';
 
         $imageSize = wp_get_attachment_image_src( $thumbnail_id, $size );
