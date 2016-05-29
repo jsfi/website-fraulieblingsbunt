@@ -17,11 +17,11 @@ add_action( 'after_setup_theme', function() {
     set_post_thumbnail_size( 0, 1024, false );
     add_image_size( 'hd', 1920, 0 );
     remove_filter( 'excerpt_more', 'twentysixteen_excerpt_more' );
-}, 100);
+}, 100 );
 
 load_child_theme_textdomain( 'twentysixteen', get_stylesheet_directory() . '/languages/' );
 
-function featuredtoRSS($content) {
+function flb_featured_rss($content) {
     global $post;
 
     if ( has_post_thumbnail( $post->ID ) ){
@@ -30,8 +30,8 @@ function featuredtoRSS($content) {
 
     return $content;
 }
-add_filter('the_excerpt_rss', 'featuredtoRSS');
-add_filter('the_content_feed', 'featuredtoRSS');
+add_filter('the_excerpt_rss', 'flb_featured_rss');
+add_filter('the_content_feed', 'flb_featured_rss');
 
 function flb_get_post_image( $post_id = null, $image_class = false, $default_size = null ) {
     $thumbnail_id = get_post_thumbnail_id( $post_id );
