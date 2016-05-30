@@ -15,6 +15,7 @@ if ( is_active_sidebar( 'sidebar-1' )  ) : ?>
             <a href="https://www.instagram.com/fraulieblingsbunt/" class="social__link social__instagram" title="Instagram" target="_blank"><span class="visuallyhidden">Instagram</span></a>
             <a href="http://www.ravelry.com/people/fraulieblingsbunt" class="social__link social__ravelry" title="Ravelry" target="_blank"><span class="visuallyhidden">Ravelry</span></a>
             <a href="mailto:kontakt@fraulieblingsbunt.de" class="social__link social__mail" title="E-Mail" target="_blank"><span class="visuallyhidden">E-Mail</span></a>
+            <a href="https://www.bloglovin.com/blogs/frau-lieblingsbunt-14644797" class="social__link social__bloglovin" title="bloglovin" target="_blank"><span class="visuallyhidden">bloglovin</span></a>
         </div>
     </aside>
 <?php endif; ?>
