@@ -709,6 +709,16 @@ h1.header__title {
       max-width: none;
       height: 100%; }
 
+.pagination {
+  margin: 1em;
+  text-align: center; }
+  .pagination__list {
+    list-style: none;
+    margin: 0;
+    padding: 0; }
+  .pagination__item {
+    display: inline-block; }
+
 [type="text"],
 [type="email"],
 [type="search"],
@@ -924,7 +934,8 @@ textarea {
  * Hide only visually, but have it available for screen readers:
  * http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
  */
-.visuallyhidden {
+.visuallyhidden,
+.js .pagination {
   border: 0;
   clip: rect(0 0 0 0);
   height: 1px;

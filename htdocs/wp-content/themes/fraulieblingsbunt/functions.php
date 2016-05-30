@@ -58,3 +58,41 @@ function flb_get_post_image( $post_id = null, $image_class = false, $default_siz
 
     return $image;
 }
+
+function flb_get_plain_pagination() {
+    global $wp_query, $wp_rewrite;
+
+    $wp_pagination = paginate_links([
+        'prev_next' => 0,
+        'show_all' => 1,
+        'type' => 'array'
+    ]);
+    $pagination = [];
+
+    if ( !$wp_pagination ) return '';
+
+    foreach ( $wp_pagination as $wp_pagination_element ) {
+        preg_match( "/(href='(.*?)')?>(.*?)</", $wp_pagination_element, $match );
+        $pagination[] = [
+            'page' => $match[3],
+            'href' => $match[2]
+        ];
+    }
+
+    ob_start();
+    ?>
+    <nav class="pagination">
+        <p class="visuallyhidden"><?php _e( 'Posts navigation' ) ?></p>
+        <ul class="pagination__list">
+            <?php foreach ( $pagination as $pagination_element ): ?>
+                <?php if ( $pagination_element['href'] ): ?>
+                    <li class="pagination__item"><a href="<?php echo $pagination_element['href'] ?>" class="pagination__element"><?php echo $pagination_element['page'] ?></a></li>
+                <?php else: ?>
+                    <li class="pagination__item pagination__current"><span class="pagination__element"><?php echo $pagination_element['page'] ?></a></li>
+                <?php endif; ?>
+            <?php endforeach; ?>
+        </ul>
+    </nav>
+    <?php
+    return ob_get_clean();
+}
