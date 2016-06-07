@@ -935,7 +935,7 @@ textarea {
  * http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
  */
 .visuallyhidden,
-.js .pagination {
+.js .post-listing__container + .pagination {
   border: 0;
   clip: rect(0 0 0 0);
   height: 1px;

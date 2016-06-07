@@ -12,7 +12,7 @@
         display: inline-block;
     }
 
-    .js & {
+    .js .post-listing__container + & {
         @extend %visuallyhidden;
     }
 }
